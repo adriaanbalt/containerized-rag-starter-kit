@@ -2,6 +2,7 @@ import { createApp } from 'vue'
 import { createStore } from 'vuex'
 import App from './App.vue'
 import './assets/main.css'
+import router from './router'
 
 // Create Vuex store
 const store = createStore({
@@ -61,6 +62,7 @@ const store = createStore({
   }
 })
 
-createApp(App)
-  .use(store)
-  .mount('#app')
+const app = createApp(App)
+app.use(store)
+app.use(router)
+app.mount('#app')
